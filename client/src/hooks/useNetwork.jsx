@@ -3,7 +3,7 @@ import axios from "axios";
 
 const API_BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://quizkosh.onrender.com"
+    ? "https://jwt-auth-ugqm.onrender.com"
     : "http://localhost:8000";
 // create axios instance
 const axiosInstance = axios.create({
