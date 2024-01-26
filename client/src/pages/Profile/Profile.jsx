@@ -54,7 +54,7 @@ function Profile({ page = "reset" }) {
     if (page === "reset") {
       console.log("reset password");
       const url = `/auth/reset-password/${id}/${token}`;
-      await makeNetworkRequest(url, "POST", data);
+      await makeNetworkRequest(url, "PATCH", data);
     } else {
       const url = `/auth/changepassword`;
       await makeNetworkRequest(url, "PATCH", data, true);

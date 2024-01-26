@@ -19,7 +19,7 @@ function ForgotPassword() {
     try {
       const result = await handleRequest(
         "/auth/send-reset-password-email",
-        "PATCH",
+        "POST",
         { email }
       );
       if (result) {
