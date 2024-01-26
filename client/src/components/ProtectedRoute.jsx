@@ -11,7 +11,7 @@ function ProtectedRoute() {
     return (
       <div
         style={{
-          position: absolute,
+          position: "absolute",
           inset: 0,
           display: "flex",
           justifyContent: "center",
