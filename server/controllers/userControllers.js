@@ -3,6 +3,7 @@ import bycrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import transporter from "../config/emailConfig.js";
+import { CLIENT_BASE_URL } from "../utils/constants.js";
 
 dotenv.config();
 
@@ -150,7 +151,7 @@ class UserController {
         const token = jwt.sign({ id: user._id }, secret, {
           expiresIn: "15m",
         });
-        const link = `http://localhost:5173/api/user/reset/${user._id}/${token}`;
+        const link = `${CLIENT_BASE_URL}/${user._id}/${token}`;
         const info = transporter.sendMail({
           from: process.env.EMAIL_FROM,
           to: user.email,
