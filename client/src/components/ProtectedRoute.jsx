@@ -7,7 +7,7 @@ function ProtectedRoute() {
   const { loading, token } = useAuth();
 
   // If the authentication is still loading, you can optionally show a loading indicator.
-  if (true) {
+  if (loading) {
     return (
       <div
         style={{
