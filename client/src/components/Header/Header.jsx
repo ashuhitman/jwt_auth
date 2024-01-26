@@ -23,7 +23,7 @@ function Header() {
             <Link to="/">Home</Link>
           </li>
         </ul>
-        <ul>{token && <li>Logout</li>}</ul>
+        <ul>{token && <li onClick={logout}>Logout</li>}</ul>
       </nav>
     </header>
   );
