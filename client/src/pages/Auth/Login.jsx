@@ -41,7 +41,6 @@ function Login({ setLoginPage }) {
       const { status, message, token } = result;
       // save token
       setToken(token);
-      console.log(result);
 
       setAlertStateFromComponent({
         message,

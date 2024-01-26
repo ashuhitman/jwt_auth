@@ -101,7 +101,6 @@ class UserController {
     const { password, password_confirmation } = req.body;
     if (password && password_confirmation) {
       if (password === password_confirmation) {
-        console.log(password);
         const hashedPassword = await bycrypt.hash(password, 10);
         try {
           await User.findByIdAndUpdate(req.user.id, {
@@ -143,7 +142,7 @@ class UserController {
   };
   static sendUserPasswordResetEmail = async (req, res) => {
     const { email } = req.body;
-    console.log(email);
+
     if (email) {
       const user = await User.findOne({ email });
       if (user) {
@@ -226,20 +225,22 @@ class UserController {
 
         return res.status(201).send({ status: "success", token: accesToken });
       }
-      res.status(401).send({ status: "error", message: "unauthorized" });
+      res.status(401).send({ status: "error", message: "unauthorized!" });
     } catch (error) {
       console.error("error", error);
-      return res.status(401).json({ message: "Unauthorized" });
+      return res.status(401).json({ message: "Unauthorized!" });
     }
   };
   static logout = (req, res) => {
     try {
       // Clear the refresh token cookie on the client side
       res.clearCookie("refreshToken");
-      res.status(200).json({ message: "Logout successful" });
+      res.status(200).json({ status: "success", message: "Logout successful" });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "Internal Server Error" });
+      res
+        .status(500)
+        .json({ status: "error", message: "Internal Server Error" });
     }
   };
 }

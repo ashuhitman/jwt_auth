@@ -8,7 +8,7 @@ import { useAuth } from "../../components/context/authContext";
 
 function Auth() {
   const [isLoginPage, setIsLoginPage] = useState(true);
-  const { user, token, loading } = useAuth();
+  const { token, loading } = useAuth();
 
   const navigate = useNavigate();
   useEffect(() => {

@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../../hooks/useNetwork";
 
 export const AuthContext = createContext();
 
@@ -12,7 +13,7 @@ export const AuthState = ({ children }) => {
     console.log("refreshong token...");
     try {
       axios.defaults.withCredentials = true;
-      const url = "http://localhost:8000/auth/refresh-token";
+      const url = `${API_BASE_URL}/auth/refresh-token`;
       const result = await axios.post(url);
       // Assuming your server returns user and token data
 

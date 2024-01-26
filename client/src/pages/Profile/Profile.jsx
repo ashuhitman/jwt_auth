@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+
 import "./Profile.scss";
 import Header from "../../components/Header/Header";
 import { validateChangePasswordData } from "../../utils/validateUser";
 import Loader from "../../components/Loader/Loader";
-import Alert from "../../components/Alert/Alert";
+
 import { alertStatus, useAlert } from "../../components/context/AlertContext";
 import useNetwork from "../../hooks/useNetwork";
 

@@ -29,7 +29,6 @@ export const validateUser = (data) => {
 };
 
 export const validateLoginData = ({ identifier, password }) => {
-  console.log({ identifier, password });
   let isError = false;
   const errors = {};
   if (!identifier) {
