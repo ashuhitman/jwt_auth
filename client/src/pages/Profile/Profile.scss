@@ -1,0 +1,71 @@
+$bg_color: #e74c3c;
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #95a5a6;
+  position: absolute;
+  inset: 0;
+
+  main {
+    margin: 1rem;
+
+    form {
+      background-color: white;
+      width: min(300px, 90%);
+      margin-inline: auto;
+      .form-input {
+        margin-block: 1rem;
+        &:first-child {
+          display: flex;
+          justify-content: center;
+        }
+        input {
+          width: 100%;
+          padding: 0.6rem;
+          // outline: $button-color;
+          outline: none;
+          border: 1px solid gray;
+        }
+        input:focus {
+          // outline: $button-color;
+          border: 1px solid $bg_color;
+        }
+        .error {
+          color: red;
+          font-size: 0.8em;
+        }
+        h2 {
+          text-align: center;
+        }
+        button {
+          padding: 0.6rem;
+          background-color: $bg_color;
+          border: none;
+          width: 100%;
+          color: white;
+
+          font-size: 1.1rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #c0392b;
+          }
+        }
+      }
+      .form-checkbox {
+        input {
+          margin-right: 0.4rem;
+          accent-color: $bg_color;
+        }
+      }
+    }
+  }
+  footer {
+    margin-top: auto;
+    font-size: 0.7em;
+    text-align: center;
+    background-color: white;
+    padding: 0.4em;
+  }
+}

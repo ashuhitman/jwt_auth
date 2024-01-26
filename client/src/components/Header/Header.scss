@@ -1,0 +1,22 @@
+$bg_color: #e74c3c;
+
+header {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  nav {
+    background-color: white;
+    padding: 0.4em 0.8em;
+    display: flex;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      li {
+        cursor: pointer;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

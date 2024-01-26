@@ -1,0 +1,48 @@
+
+GET http://127.0.0.1:8000/auth
+
+### Register user
+POST http://127.0.0.1:8000/auth/register
+Content-Type: application/json
+
+{
+    "email":"ashu8306@gmail.com",
+    "username": "1234",
+    "password": "test123",
+    "rePassword": "test123"
+}
+
+### Login User
+POST http://127.0.0.1:8000/auth/login
+Content-Type: application/json
+
+{
+    "identifier":"ashu8306@gmail.com",
+    "password":"test123"
+}
+
+### change password
+POST http://127.0.0.1:8000/auth/changepassword
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWNkMmY2YWEyNjQ0NmI0YWI0MGRkYSIsImlkZW50aWZpZXIiOiJ0ZXN0MTIzIiwiaWF0IjoxNzA1ODMzNzA3LCJleHAiOjE3MDU4MzQ2MDd9.8eEtJwqsFEKVVgT8kKt90nrnn4RpnA8sGEjbL4q66Fo
+
+{
+    "password":"test1234",
+    "password_confirmation":"test1234"
+}
+
+### get logged in user information
+POST http://127.0.0.1:8000/auth/loggedinuser
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWNkMmY2YWEyNjQ0NmI0YWI0MGRkYSIsImlkZW50aWZpZXIiOiJ0ZXN0MTIzIiwiaWF0IjoxNzA1ODMyMTMxLCJleHAiOjE3MDU4MzMwMzF9.48FvWG1-f6CW6eTc5_TrQh-hXJbslXX8cyxMxVUyRIU
+
+### RESET Password
+POST http://127.0.0.1:8000/auth/send-reset-password-email
+Content-Type: application/json
+
+{
+    "email":"ashu8306@gmail.com"
+}
+
+
+
+
