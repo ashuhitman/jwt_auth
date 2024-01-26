@@ -151,7 +151,7 @@ class UserController {
         const token = jwt.sign({ id: user._id }, secret, {
           expiresIn: "15m",
         });
-        const link = `${CLIENT_BASE_URL}/${user._id}/${token}`;
+        const link = `${CLIENT_BASE_URL}/api/user/reset/${user._id}/${token}`;
         const info = transporter.sendMail({
           from: process.env.EMAIL_FROM,
           to: user.email,
