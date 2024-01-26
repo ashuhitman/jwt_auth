@@ -12,6 +12,7 @@ function ProtectedRoute() {
       <div
         style={{
           position: "absolute",
+          height: "100svh",
           inset: 0,
           display: "flex",
           justifyContent: "center",
