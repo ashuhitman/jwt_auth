@@ -74,10 +74,9 @@ const useNetwork = () => {
         method: method.toLowerCase(),
         data,
       };
-      // Add credentials only if requiresCredentials is true
-      if (requiresCredentials) {
-        config.withCredentials = true;
-      }
+
+      config.withCredentials = true;
+
       const response = await axiosInstance(config);
       // console.log(response);
 
