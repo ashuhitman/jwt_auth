@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 });
 router.post("/login", UserController.userLogin);
 router.post("/register", UserController.userRegistration);
-router.post("/reset-password/:id/:token", UserController.userResetPassword);
+router.patch("/reset-password/:id/:token", UserController.userResetPassword);
 router.post("/refresh-token", UserController.refreshToken);
 router.post(
   "/send-reset-password-email",
@@ -19,9 +19,13 @@ router.post(
 );
 
 // private routes
-router.post("/changepassword", authenticate, UserController.changeUserPassword);
+router.patch(
+  "/changepassword",
+  authenticate,
+  UserController.changeUserPassword
+);
 router.post("/loggedinuser", authenticate, UserController.loggedUser);
 
-router.post("/logout", authenticate, UserController.logout);
+router.delete("/logout", authenticate, UserController.logout);
 
 export default router;

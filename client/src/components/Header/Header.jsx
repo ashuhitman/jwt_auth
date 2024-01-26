@@ -9,7 +9,7 @@ function Header() {
   const { handleRequest, loading } = useNetwork();
   const logout = async () => {
     try {
-      await handleRequest("/auth/logout", "POST", null, true);
+      await handleRequest("/auth/logout", "DELETE", null, true);
       setToken(null);
     } catch (error) {
       console.log("logout error: ", error);

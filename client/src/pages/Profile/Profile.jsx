@@ -57,7 +57,7 @@ function Profile({ page = "reset" }) {
       await makeNetworkRequest(url, "POST", data);
     } else {
       const url = `/auth/changepassword`;
-      await makeNetworkRequest(url, "POST", data, true);
+      await makeNetworkRequest(url, "PATCH", data, true);
     }
   };
 
