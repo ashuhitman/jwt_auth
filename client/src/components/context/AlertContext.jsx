@@ -4,6 +4,7 @@ export const alertStatus = {
   NONE: "none",
   ERROR: "error",
   SUCCESS: "success",
+  PROCESSING: "processing",
 };
 
 const AlertContext = createContext();

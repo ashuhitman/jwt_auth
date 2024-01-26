@@ -19,7 +19,7 @@ function ProtectedRoute() {
           backgroundColor: "rgba(255, 255, 255,1)",
         }}
       >
-        <Loader display="visible" />
+        <Loader visibility="visible" />
       </div>
     );
   }

@@ -13,7 +13,7 @@ function Header() {
     try {
       setAlertStateFromComponent({
         message: "logging out...",
-        status: alertStatus.SUCCESS,
+        status: alertStatus.PROCESSING,
       });
       const result = await handleRequest("/auth/logout", "DELETE", null, true);
       setToken(null);

@@ -4,6 +4,7 @@ import { RiErrorWarningFill } from "react-icons/ri";
 import { GiCheckMark } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import { alertStatus, useAlert } from "../context/AlertContext";
+import Loader from "../Loader/Loader";
 
 function Alert() {
   const { alertState, setAlertState, hideAlert } = useAlert();
@@ -28,12 +29,18 @@ function Alert() {
       className="alert"
       style={{
         backgroundColor:
-          alertState.status === alertStatus.ERROR ? "#e84118" : "green",
+          alertState.status === alertStatus.ERROR
+            ? "#e84118"
+            : alertState.status === alertStatus.PROCESSING
+            ? "#7f8c8d"
+            : "green",
       }}
     >
       <div className="alert-icon">
         {alertState.status === alertStatus.ERROR ? (
           <RiErrorWarningFill size={20} />
+        ) : alertState.status === alertStatus.PROCESSING ? (
+          <Loader visibility="visible" size="20px" />
         ) : (
           <GiCheckMark size={20} />
         )}
